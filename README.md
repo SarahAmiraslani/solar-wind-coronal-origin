@@ -30,8 +30,11 @@ The corona, the Sun's outer atmosphere, releases a stream of hot, high-pressure 
 Describe the organization of your project. Explain the purpose of the key directories and files.
 
 `data/`: Folder containing the dataset and any data-related scripts.
+
 `notebooks/`: Jupyter notebooks with the exploratory data analysis and models.
+
 `src/`: Source code for use in this project.
+
 `results/`: Output results, including figures and tables.
 
 ## Data Overview
