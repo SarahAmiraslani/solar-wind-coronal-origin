@@ -38,8 +38,23 @@ Describe the organization of your project. Explain the purpose of the key direct
 `results/`: Output results, including figures and tables.
 
 ## Data Overview
+
 ### Data Sources
+| Data Source | Description | URL | Type | Date Accessed | Publisher |
+|-------------|-------------|-----|------|---------------|-----------|
+| Source 1    | Description of Source 1 | http://example1.com | CSV | 2022-01-01 | Publisher 1 |
+| Source 2    | Description of Source 2 | http://example2.com | JSON | 2022-01-02 | Publisher 2 |
+| Source 3    | Description of Source 3 | http://example3.com | API | 2022-01-03 | Publisher 3 |
+
 ### Data Preparation
+
+Data is in [hierarchical data format](https://izw1.caltech.edu/ACE/ASC/hdf.html)
+New ACE Level 2 Data Server https://izw1.caltech.edu/ACE/ASC/level2/new/intro.html
+
+ACE Level 2 Policy - https://izw1.caltech.edu/ACE/ASC/level2/policy_lvl2.html
+ACE data levels explained - https://izw1.caltech.edu/ACE/ASC/level1/dpl_def.htm
+
+https://izw1.caltech.edu/ACE/ASC/clock.html
 
 ## Analysis
 
