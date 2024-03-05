@@ -40,11 +40,32 @@ Describe the organization of your project. Explain the purpose of the key direct
 ## Data Overview
 
 ### Data Sources
-| Data Source | Description | URL | Type | Date Accessed | Publisher |
-|-------------|-------------|-----|------|---------------|-----------|
-| Source 1    | Description of Source 1 | http://example1.com | CSV | 2022-01-01 | Publisher 1 |
-| Source 2    | Description of Source 2 | http://example2.com | JSON | 2022-01-02 | Publisher 2 |
-| Source 3    | Description of Source 3 | http://example3.com | API | 2022-01-03 | Publisher 3 |
+| Data Source | Description | URL | Type | Date Accessed | Publisher | Shape |
+|-------------|-------------|-----|------|---------------|-----------|-------|
+| Heliospheric Current Sheet (HCS) Indexes  | Description of Source 1 | N/A | CSV | 2024-03-01 | University of Michigan, collected by Liang Zhao, PhD| ADD |
+|Advanced Composition Explorer (ACE) Spacecraft Data | ADD|ADD|ADD|ADD|NASA|ADD|
+
+
+
+<details>
+<summary>HCS Indexes</summary>
+
+There are 13 columns. The fields that are most relevant to this project are `fyear_CS` (gives the time as a fractional year), `SD_70` (the SD index), and `SL_70` (the SL index, we use log_10 on this index to make it more compatible with SD as was recomended by Dr. Liang. 
+
+</details>
+
+
+<details>
+<summary>Advanced Composition Explorer (ACE) Spacecraft Data </summary>
+<br></br>
+
+**Measurement type**: In-situ located at the Sun-Earth L1 Lagrange point, about 870,000 miles (1.4 million kilometers) from Earth (NASA, n.d.)
+
+**Summary**: Launched in 1997, NASA's Advanced Composition Explorer (ACE) mission is dedicated to capturing and analyzing particles from solar, interplanetary, interstellar, and galactic sources. Its primary aim is to explore the connections between the Sun, Earth, and the Milky Way by examining materials expelled by the Sun. In-situ data collection began in 1998, providing near-real-time insights into solar wind characteristics through hourly averages collected by ACE's suite of nine instruments. Our focus will be on four of these instruments: the Magnetometer (MAG), the Solar Wind Electron, Proton, and Alpha Monitor (SWEPAM), the Electron, Proton, and Alpha Monitor (EPAM), and the Solar Wind Ion Composition Spectrometer (SWICS). These instruments have been identified through our literature review as crucial for determining the coronal origins of the solar wind.
+Data Cleaning Requirements: routine maintenance operations, instrument saturation and degradation lead to gaps or errors in the in-situ measurements. The SWICS data contains a flag to identify “good” vs “bad” quality entries, but we may have to perform careful preprocessing to identify bad quality metrics in other measurements that do not have this quality flag. 
+
+</details>
+
 
 ### Data Preparation
 
