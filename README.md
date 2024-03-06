@@ -42,7 +42,7 @@ Describe the organization of your project. Explain the purpose of the key direct
 ### Data Sources
 | Data Source | Description | URL | Type | Date Accessed | Publisher | Shape |
 |-------------|-------------|-----|------|---------------|-----------|-------|
-| Heliospheric Current Sheet (HCS) Indexes  | Description of Source 1 | N/A | CSV | 2024-03-01 | University of Michigan, collected by Liang Zhao, PhD| ADD |
+| Heliospheric Current Sheet (HCS) Indexes  | Description of Source 1 | N/A | CSV | 2024-03-01 | University of Michigan, collected by Liang Zhao, PhD| (616, 13) |
 |Advanced Composition Explorer (ACE) Spacecraft Data | ADD|ADD|ADD|ADD|NASA|ADD|
 
 
