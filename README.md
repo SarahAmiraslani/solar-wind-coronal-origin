@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HRN2KZ0T6PVRCQWEQPZCEMY5
-  version: v3
----
-
 # Understanding the in-situ Solar Wind Properties with Machine Learning and Artificial Intelligence
 
 ## Overview
