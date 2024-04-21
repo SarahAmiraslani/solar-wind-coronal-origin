@@ -11,6 +11,7 @@ from datetime import datetime, timedelta
 # Third-party imports
 import pandas as pd
 import matplotlib.pyplot as plt
+from functools import reduce
 
 
 # === Date Formatting Functions ===
@@ -75,8 +76,52 @@ def parse_hdf_data(path):
     return pd.DataFrame(data, columns=col_names, dtype=float)
 
 
+def merge_dataframes(dataframes, key):
+    """
+    Merge multiple pandas DataFrames on a common key.
+
+    Args:
+    dataframes (list of pd.DataFrame): List of DataFrames to merge.
+    key (str): Column name to merge on.
+
+    Returns:
+    pd.DataFrame: Merged DataFrame.
+    """
+    # Reduce function to merge two DataFrames on the specified key
+    return reduce(
+        lambda left, right: pd.merge(
+            left, right, on=key, how="inner", validate="one_to_one"
+        ),
+        dataframes,
+    )
+
+
+def sort_columns_except_key(df, key_column):
+    """
+    Sort all columns of the DataFrame alphabetically except the specified key column.
+
+    Args:
+    df (pd.DataFrame): The DataFrame to sort.
+    key_column (str): The name of the column to keep fixed.
+
+    Returns:
+    pd.DataFrame: DataFrame with sorted columns, keeping the key column as is.
+    """
+    if key_column not in df.columns:
+        raise ValueError(f"Key column '{key_column}' not found in DataFrame.")
+
+    # Get all columns except the key column
+    columns_to_sort = [col for col in df.columns if col != key_column]
+    # Sort these columns
+    sorted_columns = sorted(columns_to_sort)
+    # Combine the key column with the sorted remaining columns
+    new_column_order = [key_column] + sorted_columns
+    # Reindex the DataFrame with the new column order
+    return df[new_column_order]
+
+
 # === Data Quality Functions ===
-def flag_occurrences(df, flag):
+def missing_occurrences(df, flag):
     """
     Counts the occurrences of a specific flag in each row of a DataFrame.
 
@@ -86,11 +131,11 @@ def flag_occurrences(df, flag):
 
     Returns:
         pandas.DataFrame: The input DataFrame with an additional column
-        "Flag_Count" that contains the count of flag occurrences in each row.
+        "Missing_Count" that contains the count of flag occurrences in each row.
     """
-    df["Flag_Count"] = df.apply(lambda row: row.tolist().count(flag), axis=1)
+    df["Missing_Count"] = df.apply(lambda row: row.tolist().count(flag), axis=1)
     numeric_columns = df.select_dtypes(include=["float", "int"]).columns
-    df["Flag_Proportion"] = df["Flag_Count"] / df[numeric_columns].shape[1]
+    df["Missing_Proportion"] = df["Missing_Count"] / df[numeric_columns].shape[1]
     return df
 
 
@@ -105,7 +150,12 @@ def visualize_flag(flag_df, df_name):
         None
     """
     plt.figure(figsize=(10, 6))
-    plt.hist(flag_df["Flag_Count"], bins=10, color="skyblue", edgecolor="black")
+    plt.hist(
+        flag_df["Flag_Count"],
+        bins=10,
+        color="skyblue",
+        edgecolor="black",
+    )
     plt.xlabel("Flag Count")
     plt.ylabel("Frequency")
     plt.title(f"{df_name} Distribution of Flag Occurrences Per Timestamp")
