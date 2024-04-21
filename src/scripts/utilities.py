@@ -5,7 +5,10 @@ utilities.py
 ------------
 This module provides utility functions for date and time manipulation.
 """
+# Standard library imports
 from datetime import datetime, timedelta
+
+# Third-party imports
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -82,7 +85,8 @@ def flag_occurrences(df, flag):
         flag: The flag to count occurrences of.
 
     Returns:
-        pandas.DataFrame: The input DataFrame with an additional column "Flag_Count" that contains the count of flag occurrences in each row.
+        pandas.DataFrame: The input DataFrame with an additional column
+        "Flag_Count" that contains the count of flag occurrences in each row.
     """
     df["Flag_Count"] = df.apply(lambda row: row.tolist().count(flag), axis=1)
     numeric_columns = df.select_dtypes(include=["float", "int"]).columns

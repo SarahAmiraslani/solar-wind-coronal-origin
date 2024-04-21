@@ -1,8 +1,13 @@
 # path: tests/test_utilities.py
 
+# Standard library imports
+from datetime import datetime
+
+# Third-party imports
 import pandas as pd
 import pytest
-from datetime import datetime
+
+# Local application imports
 from src.scripts.utilities import (
     add_datetime_column,
     convert_fractional_date,
@@ -40,6 +45,16 @@ from src.scripts.utilities import (
     ],
 )
 def test_add_datetime_column(input_data, expected_output):
+    """
+    Test function for the add_datetime_column function.
+
+    Parameters:
+    input_data (list): The input data for testing.
+    expected_output (list): The expected output data for testing.
+
+    Returns:
+    None
+    """
     # Arrange
     df_input = pd.DataFrame(input_data)
     df_expected = pd.DataFrame(expected_output)
@@ -64,6 +79,17 @@ def test_add_datetime_column(input_data, expected_output):
     ],
 )
 def test_convert_fractional_date(input_number, expected_date):
+    """
+    Test the convert_fractional_date function.
+
+    Args:
+        input_number (float): The input fractional date.
+        expected_date (str): The expected converted date.
+
+    Returns:
+        None
+    """
+
     # Act
     result_date = convert_fractional_date(input_number)
 
@@ -90,6 +116,18 @@ def test_convert_fractional_date(input_number, expected_date):
     ],
 )
 def test_parse_hdf_data(tmp_path, file_content, expected_df):
+    """
+    Test the parse_hdf_data function.
+
+    Args:
+        tmp_path (str): The temporary directory path.
+        file_content (str): The content of the HDF data file.
+        expected_df (pandas.DataFrame): The expected DataFrame after parsing the HDF data.
+
+    Returns:
+        None
+    """
+
     # Arrange
     d = tmp_path / "sub"
     d.mkdir()
@@ -139,6 +177,17 @@ def test_parse_hdf_data(tmp_path, file_content, expected_df):
     ],
 )
 def test_flag_occurrences(input_df, flag, expected_df):
+    """
+    Test function for flag_occurrences.
+
+    Args:
+        input_df (pandas.DataFrame): The input DataFrame.
+        flag (str): The flag to search for.
+        expected_df (pandas.DataFrame): The expected output DataFrame.
+
+    Returns:
+        None
+    """
     # Act
     result_df = flag_occurrences(input_df, flag)
 
