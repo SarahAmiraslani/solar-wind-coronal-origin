@@ -94,7 +94,7 @@ def flag_occurrences(df, flag):
     return df
 
 
-def visualize_flag(flag_df):
+def visualize_flag(flag_df, df_name):
     """
     Visualizes the distribution of flag occurrences in a DataFrame.
 
@@ -108,5 +108,5 @@ def visualize_flag(flag_df):
     plt.hist(flag_df["Flag_Count"], bins=10, color="skyblue", edgecolor="black")
     plt.xlabel("Flag Count")
     plt.ylabel("Frequency")
-    plt.title("Distribution of Flag Occurrences")
+    plt.title(f"{df_name} Distribution of Flag Occurrences Per Timestamp")
     plt.show()
