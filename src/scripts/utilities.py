@@ -139,7 +139,12 @@ def missing_occurrences(df, flag):
     return df
 
 
-def visualize_flag(flag_df, df_name):
+def visualize_flag(  # The `flag_` prefix is commonly used to indicate variables or
+    # columns that represent flags or indicators in a dataset.
+    # These flags are typically binary variables that denote the
+    # presence or absence of a certain condition, event, or status.
+    flag_df,
+):
     """
     Visualizes the distribution of flag occurrences in a DataFrame.
 
@@ -151,12 +156,15 @@ def visualize_flag(flag_df, df_name):
     """
     plt.figure(figsize=(10, 6))
     plt.hist(
-        flag_df["Flag_Count"],
+        flag_df["Missing_Count"],
         bins=10,
         color="skyblue",
         edgecolor="black",
     )
-    plt.xlabel("Flag Count")
+    plt.xlabel("Missing Count")
     plt.ylabel("Frequency")
-    plt.title(f"{df_name} Distribution of Flag Occurrences Per Timestamp")
+    plt.title(f"Distribution of Missing Occurrences Per Timestamp")
     plt.show()
+
+
+# === Machine Learning Functions ===
