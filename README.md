@@ -63,8 +63,6 @@ We have each signed non-disclosure agreements with the principal investigators w
 4. Can we apply ensemble learning or deep learning methods, such as Extra tree, LSTM, transformer etc., to predict the sunspot number and Heliospheric current sheet (HCS) indexes and to provide implications for the solar wind global structure in the future?
 5. ojection of the data comes to lie on the first coordinate (called the first principal cClustering
 
-## Results
-
 ## Acknowledgments
 
 We extend our gratitude to the ACE Science Center (ASC) for its maintenance of well-documented public records of data from the ACE spacecraft. We also wish to acknowledge the contributions of the NASA National Space Science Data Center, the Space Physics Data Facility, and Edward C. Stone of the California Institute of Technology, the Principal Investigator for the ACE project, for their support in the usage of ACE data. Additionally, we would like to
