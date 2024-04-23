@@ -1,4 +1,4 @@
-# Understanding the in-situ Solar Wind Properties with Machine Learning and Artificial Intelligence
+# Understanding the in-situ Solar Wind Properties with Machine Learning
 
 ## Overview
 
@@ -40,16 +40,7 @@ Ensure that you have the Python package dependencies installed before running th
 
 `src/`: utility scripts used in this project.
 
-## Data Overview
-
-### Data Sources
-
-| Data Source                                                                               | Description             | Type | Date Accessed | Publisher                                                  | Shape                      |
-| ----------------------------------------------------------------------------------------- | ----------------------- | ---- | ------------- | ---------------------------------------------------------- | -------------------------- |
-| Heliospheric Current Sheet (HCS) Indexes                                                  | Description of Source 1 | CSV  | 2024-03-01    | University of Michigan, collected by Liang Zhao, PhD       | (616, 13)                  |
-| [Advanced Composition Explorer (ACE)](https://science.nasa.gov/mission/ace/) Spacecraft Data | ADD                     | HDF  | 2024-03-01    | ACE Science Center (ASC), maintained by Caltech Univeristy | (132245, 175)`<details>` |
-
-### Data Access Statement
+## Data Access
 
 We have each signed non-disclosure agreements with the principal investigators who have created the HCS Indexes data, preventing us from sharing the data source. However, the ACE dataset is open source and can be pulled from the [ACE Level 2 (Verified) Data](https://izw1.caltech.edu/ACE/ASC/level2/).
 
@@ -58,8 +49,6 @@ We have each signed non-disclosure agreements with the principal investigators w
 1. How can we apply novel dimension reduction methods, such as PCA, TSNE, etc., to obtain informative solar wind in-situ data representation in low-dimensional space? How can this low-dimensional representation provide better 2D/3D visualization support than traditional dimension reduction techniques?
 2. How can we apply feature selection methods on the solar wind observed parameters, to objectively rank the importance of these measurements?
 3. Employing clustering methods such as DBSCAN, OPTICS, etc., and their variants, can we objectively cluster the low-dimensional representation of the solar wind data, to better understand the potential differences among the categories caused by the different coronal origins?
-4. Can we apply ensemble learning or deep learning methods, such as Extra tree, LSTM, transformer etc., to predict the sunspot number and Heliospheric current sheet (HCS) indexes and to provide implications for the solar wind global structure in the future?
-5. ojection of the data comes to lie on the first coordinate (called the first principal cClustering
 
 ## Acknowledgments
 
