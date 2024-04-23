@@ -47,7 +47,7 @@ Ensure that you have the Python package dependencies installed before running th
 | Data Source                                                                               | Description             | Type | Date Accessed | Publisher                                                  | Shape                      |
 | ----------------------------------------------------------------------------------------- | ----------------------- | ---- | ------------- | ---------------------------------------------------------- | -------------------------- |
 | Heliospheric Current Sheet (HCS) Indexes                                                  | Description of Source 1 | CSV  | 2024-03-01    | University of Michigan, collected by Liang Zhao, PhD       | (616, 13)                  |
-| [Advanced Composition Explorer (ACE)](https://science.nasa.gov/mission/ace/) Spacecraft Data | ADD                     | HDF  | 2024-03-01    | ACE Science Center (ASC), maintained by Caltech Univeristy | (132245, 175)`<details>` |
+| [Advanced Composition Explorer (ACE)](https://science.nasa.gov/mission/ace/) Spacecraft Data | ADD                     | HDF  | 2024-03-01    | ACE Science Center (ASC), maintained by Caltech Univeristy | (132245, 175) |
 
 ### Data Access Statement
 
