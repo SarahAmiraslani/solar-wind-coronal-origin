@@ -40,8 +40,6 @@ Ensure that you have the Python package dependencies installed before running th
 
 `src/`: utility scripts used in this project.
 
-`src/`
-
 ## Data Overview
 
 ### Data Sources
